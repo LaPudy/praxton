@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praxis - Expertos en Reclutamiento</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        section {
+            padding: 4rem 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero {
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            overflow: hidden;
+        }
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('logopraxis.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #f50057;
+        }
+        .about-praxis {
+            background-color: #f5f5f5;
+        }
+        .image-placeholder {
+            background-color: #ddd;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #666;
+            margin: 2rem 0;
+            background-image: url('img_rep.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .recruitment-info {
+            background-color: #e8eaf6;
+        }
+        .video-section {
+            background-color: #c5cae9;
+        }
+        .video-container {
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 56.25%; /* Proporción 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .contact {
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+        }
+        .contact a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+        .language-btn {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .language-btn:hover, .language-btn.active {
+            background-color: white;
+            color: #3f51b5;
+        }
+        .how-it-was-done {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .how-it-was-button {
+            background-color: #ff4081;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .how-it-was-button:hover {
+            background-color: #f50057;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="language-selector">
+            <button class="language-btn active" onclick="changeLanguage('es')">ES</button>
+            <button class="language-btn" onclick="changeLanguage('en')">EN</button>
+            <button class="language-btn" onclick="changeLanguage('pt')">PT</button>
+        </div>
+        <div class="container hero-content">
+            <h1 id="hero-title">Praxis: Transformando el Reclutamiento</h1>
+            <p id="hero-subtitle">Descubre cómo estamos revolucionando la forma de conectar talento con oportunidades</p>
+            <button class="cta-button" onclick="scrollToSection('about-praxis')" id="cta-button">Conoce más</button>
+        </div>
+    </section>
+
+    <section id="about-praxis" class="about-praxis">
+        <div class="container">
+            <h2 id="about-title">Sobre Praxis</h2>
+            <p id="about-text">Aquí puedes agregar texto importante sobre Praxis, su misión, visión y valores.</p>
+            <div class="image-placeholder">
+                <!-- La imagen representativa se muestra como fondo de este div -->
+            </div>
+        </div>
+    </section>
+
+    <section id="recruitment-info" class="recruitment-info">
+        <div class="container">
+            <h2 id="recruitment-title">El Papel Crucial del Reclutamiento</h2>
+            <p id="recruitment-intro">El departamento de reclutamiento es fundamental para el éxito de cualquier empresa. Se encarga de:</p>
+            <ul id="recruitment-list">
+                <li>Identificar y atraer talento calificado</li>
+                <li>Evaluar las habilidades y la idoneidad de los candidatos</li>
+                <li>Asegurar una buena adaptación cultural</li>
+                <li>Optimizar el proceso de contratación</li>
+                <li>Contribuir a la estrategia de crecimiento de la empresa</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="recruitment-videos" class="video-section">
+        <div class="container">
+            <h2 id="video-title">Nuestro Proceso de Reclutamiento</h2>
+            
+            <div class="video-container">
+                <h3 id="video-subtitle-1">1. Descubre Praxis</h3>
+                <iframe id="video-1" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-container">
+                <h3 id="video-subtitle-2">2. Nuestro Enfoque Único</h3>
+                <iframe id="video-2" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <div class="video-container">
+                <h3 id="video-subtitle-3">3. Historias de Éxito</h3>
+                <iframe id="video-3" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 id="contact-title">Contacta con Praxis</h2>
+            <p id="contact-text">¿Listo para transformar tu carrera o tu empresa? Visita nuestra página principal para más información.</p>
+            <a href="https://mexico.praxisglobe.com/" target="_blank" class="cta-button" id="contact-button">Visitar Praxis México</a>
+        </div>
+    </section>
+
+    <div class="how-it-was-done">
+        <a href="https://favicon.io/" target="_blank" class="how-it-was-button" id="how-it-was-button">¿Cómo se hizo?</a>
+    </div>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+        }
+
+        const translations = {
+            es: {
+                heroTitle: "Praxis: Transformando el Reclutamiento",
+                heroSubtitle: "Descubre cómo estamos revolucionando la forma de conectar talento con oportunidades",
+                ctaButton: "Conoce más",
+                aboutTitle: "Sobre Praxis",
+                aboutText: "Aportamos a Nuestros Clientes las mejores soluciones tecnológicas, innovadoras y confiables para su desarrollo empresarial.",
+                recruitmentTitle: "El Papel Crucial del Reclutamiento",
+                recruitmentIntro: "El departamento de reclutamiento es fundamental para el éxito de cualquier empresa. Se encarga de:",
+                recruitmentList: [
+                    "Identificar y atraer talento calificado",
+                    "Evaluar las habilidades y la idoneidad de los candidatos",
+                    "Asegurar una buena adaptación cultural",
+                    "Optimizar el proceso de contratación",
+                    "Contribuir a la estrategia de crecimiento de la empresa"
+                ],
+                videoTitle: "Nuestro Proceso de Reclutamiento",
+                videoSubtitle1: "1. Descubre Praxis",
+                video1: "https://www.youtube.com/embed/VIDEO_ID1",
+                videoSubtitle2: "2. Nuestro Enfoque Único",
+                video2: "https://www.youtube.com/embed/VIDEO_ID2",
+                videoSubtitle3: "3. Historias de Éxito",
+                video3: "https://www.youtube.com/embed/VIDEO_ID3",
+                contactTitle: "Contacta con Praxis",
+                contactText: "¿Listo para transformar tu carrera o tu empresa? Visita nuestra página principal para más información.",
+                contactButton: "Visitar Praxis México",
+                howItWasButton: "¿Cómo se hizo?"
+            },
+            en: {
+                heroTitle: "Praxis: Transforming Recruitment",
+                heroSubtitle: "Discover how we are revolutionizing the way we connect talent with opportunities",
+                ctaButton: "Learn More",
+                aboutTitle: "About Praxis",
+                aboutText: "We provide our clients with the best technological, innovative, and reliable solutions for their business development.",
+                recruitmentTitle: "The Crucial Role of Recruitment",
+                recruitmentIntro: "The recruitment department is essential for the success of any company. It is responsible for:",
+                recruitmentList: [
+                    "Identifying and attracting qualified talent",
+                    "Evaluating candidates' skills and suitability",
+                    "Ensuring good cultural fit",
+                    "Optimizing the hiring process",
+                    "Contributing to the company's growth strategy"
+                ],
+                videoTitle: "Our Recruitment Process",
+                videoSubtitle1: "1. Discover Praxis",
+                video1: "https://www.youtube.com/embed/VIDEO_ID1",
+                videoSubtitle2: "2. Our Unique Approach",
+                video2: "https://www.youtube.com/embed/VIDEO_ID2",
+                videoSubtitle3: "3. Success Stories",
+                video3: "https://www.youtube.com/embed/VIDEO_ID3",
+                contactTitle: "Contact Praxis",
+                contactText: "Ready to transform your career or your company? Visit our main page for more information.",
+                contactButton: "Visit Praxis Mexico",
+                howItWasButton: "How it was done?"
+            },
+            pt: {
+                heroTitle: "Praxis: Transformando o Recrutamento",
+                heroSubtitle: "Descubra como estamos revolucionando a forma de conectar talentos a oportunidades",
+                ctaButton: "Saiba mais",
+                aboutTitle: "Sobre a Praxis",
+                aboutText: "Oferecemos aos nossos clientes as melhores soluções tecnológicas, inovadoras e confiáveis para seu desenvolvimento empresarial.",
+                recruitmentTitle: "O Papel Crucial do Recrutamento",
+                recruitmentIntro: "O departamento de recrutamento é essencial para o sucesso de qualquer empresa. Ele é responsável por:",
+                recruitmentList: [
+                    "Identificar e atrair talentos qualificados",
+                    "Avaliar as habilidades e adequação dos candidatos",
+                    "Garantir uma boa adaptação cultural",
+                    "Otimizar o processo de contratação",
+                    "Contribuir para a estratégia de crescimento da empresa"
+                ],
+                videoTitle: "Nosso Processo de Recrutamento",
+                videoSubtitle1: "1. Descubra a Praxis",
+                video1: "https://www.youtube.com/embed/VIDEO_ID1",
+                videoSubtitle2: "2. Nossa Abordagem Única",
+                video2: "https://www.youtube.com/embed/VIDEO_ID2",
+                videoSubtitle3: "3. Histórias de Sucesso",
+                video3: "https://www.youtube.com/embed/VIDEO_ID3",
+                contactTitle: "Contate a Praxis",
+                contactText: "Pronto para transformar sua carreira ou sua empresa? Visite nossa página principal para mais informações.",
+                contactButton: "Visitar a Praxis México",
+                howItWasButton: "Como foi feito?"
+            }
+        };
+
+        function changeLanguage(lang) {
+            const translation = translations[lang];
+
+            // Update hero section
+            document.getElementById("hero-title").innerText = translation.heroTitle;
+            document.getElementById("hero-subtitle").innerText = translation.heroSubtitle;
+            document.getElementById("cta-button").innerText = translation.ctaButton;
+
+            // Update about section
+            document.getElementById("about-title").innerText = translation.aboutTitle;
+            document.getElementById("about-text").innerText = translation.aboutText;
+
+            // Update recruitment section
+            document.getElementById("recruitment-title").innerText = translation.recruitmentTitle;
+            document.getElementById("recruitment-intro").innerText = translation.recruitmentIntro;
+            const recruitmentList = document.getElementById("recruitment-list");
+            recruitmentList.innerHTML = '';
+            translation.recruitmentList.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                recruitmentList.appendChild(li);
+            });
+
+            // Update video section
+            document.getElementById("video-title").innerText = translation.videoTitle;
+            document.getElementById("video-subtitle-1").innerText = translation.videoSubtitle1;
+            document.getElementById("video-1").src = translation.video1;
+            document.getElementById("video-subtitle-2").innerText = translation.videoSubtitle2;
+            document.getElementById("video-2").src = translation.video2;
+            document.getElementById("video-subtitle-3").innerText = translation.videoSubtitle3;
+            document.getElementById("video-3").src = translation.video3;
+
+            // Update contact section
+            document.getElementById("contact-title").innerText = translation.contactTitle;
+            document.getElementById("contact-text").innerText = translation.contactText;
+            document.getElementById("contact-button").innerText = translation.contactButton;
+
+            // Update the how-it-was-done button
+            document.getElementById("how-it-was-button").innerText = translation.howItWasButton;
+
+            // Update active button state
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.innerText === lang.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Set initial language to Spanish
+        changeLanguage('es');
+    </script>
+</body>
+</html>
